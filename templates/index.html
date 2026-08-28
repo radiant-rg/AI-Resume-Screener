@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Resume Screener</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- =====================================================
+         HEADER
+         ===================================================== -->
+
+    <header class="header">
+
+        <div class="logo">
+            <div class="logo-icon">✦</div>
+            <span>ResumeAI</span>
+        </div>
+
+        <h1>
+            AI Resume Screener
+        </h1>
+
+        <p>
+            Analyze and rank candidates using AI-powered resume screening.
+        </p>
+
+    </header>
+
+
+    <!-- =====================================================
+         JOB DESCRIPTION
+         ===================================================== -->
+
+    <section class="card">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                01
+            </div>
+
+            <div>
+                <h2>Job Description</h2>
+
+                <p>
+                    Enter the job description you want to screen candidates against.
+                </p>
+            </div>
+
+        </div>
+
+
+        <textarea
+            id="jobDescription"
+            placeholder="Paste the complete job description here...
+
+Example:
+We are looking for a Software Development Engineer with experience in Python, Java, data structures, algorithms, SQL and cloud technologies..."
+        ></textarea>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RESUME UPLOAD
+         ===================================================== -->
+
+    <section class="card">
+
+        <div class="section-heading">
+
+            <div class="section-number">
+                02
+            </div>
+
+            <div>
+                <h2>Upload Resumes</h2>
+
+                <p>
+                    Upload multiple PDF or DOCX resumes.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- DROP AREA -->
+
+        <div
+            class="upload-area"
+            id="uploadArea"
+        >
+
+            <input
+                type="file"
+                id="resumeFiles"
+                accept=".pdf,.docx"
+                multiple
+            >
+
+
+            <label for="resumeFiles">
+
+                <div class="upload-icon">
+                    ↑
+                </div>
+
+                <h3>
+                    Drag & Drop Resumes
+                </h3>
+
+                <p>
+                    Drop your files here or
+                    <span>browse</span>
+                </p>
+
+                <small>
+                    PDF or DOCX • Maximum 100 resumes
+                </small>
+
+            </label>
+
+        </div>
+
+
+        <!-- =================================================
+             FILE COUNT + CLEAR ALL
+             ================================================= -->
+
+        <div
+            class="upload-info"
+            id="uploadInfo"
+        >
+
+            <div class="selected-count">
+
+                <strong id="fileCount">
+                    0
+                </strong>
+
+                <span>
+                    resumes selected
+                </span>
+
+            </div>
+
+
+            <button
+                type="button"
+                id="clearFiles"
+                class="clear-button"
+            >
+                Clear All
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             SELECTED FILES
+             ================================================= -->
+
+        <div
+            id="fileList"
+            class="file-list"
+        ></div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ERROR
+         ===================================================== -->
+
+    <div
+        id="error"
+        class="error hidden"
+    ></div>
+
+
+
+    <!-- =====================================================
+         SCREEN BUTTON
+         ===================================================== -->
+
+    <button
+        id="screenButton"
+        class="screen-button"
+        type="button"
+    >
+
+        <span>
+            ✦
+        </span>
+
+        Screen Candidates
+
+    </button>
+
+
+
+    <!-- =====================================================
+         LOADING
+         ===================================================== -->
+
+    <div
+        id="loading"
+        class="loading hidden"
+    >
+
+        <div class="spinner"></div>
+
+        <h3>
+            AI is screening candidates
+        </h3>
+
+        <p>
+            Analyzing resumes and matching them with the job requirements...
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         RESULTS
+         ===================================================== -->
+
+    <section
+        id="results"
+        class="results hidden"
+    >
+
+        <div class="results-header">
+
+            <div>
+
+                <div class="section-number">
+                    03
+                </div>
+
+                <h2>
+                    Screening Results
+                </h2>
+
+                <p>
+                    AI-generated candidate analysis and ranking.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- JOB SUMMARY -->
+
+        <div class="summary-grid">
+
+            <div class="summary-card">
+
+                <span>
+                    Job Role
+                </span>
+
+                <strong id="jobRole">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    Minimum Experience
+                </span>
+
+                <strong id="minimumExperience">
+                    -
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    Candidates
+                </span>
+
+                <strong id="candidateCount">
+                    0
+                </strong>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span>
+                    Top Match
+                </span>
+
+                <strong id="topScore">
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- JOB DETAILS -->
+
+        <div class="card">
+
+            <h3>
+                Required Skills
+            </h3>
+
+            <div
+                id="requiredSkills"
+                class="tags"
+            ></div>
+
+
+            <h3>
+                Preferred Skills
+            </h3>
+
+            <div
+                id="preferredSkills"
+                class="tags"
+            ></div>
+
+
+            <h3>
+                Education Requirements
+            </h3>
+
+            <ul
+                id="educationRequirements"
+                class="list"
+            ></ul>
+
+
+            <h3>
+                Key Responsibilities
+            </h3>
+
+            <ul
+                id="responsibilities"
+                class="list"
+            ></ul>
+
+        </div>
+
+
+
+        <!-- CANDIDATES -->
+
+        <div class="card">
+
+            <div class="candidate-header">
+
+                <div>
+
+                    <h2>
+                        Candidate Ranking
+                    </h2>
+
+                    <p>
+                        Candidates sorted by AI match score.
+                    </p>
+
+                </div>
+
+                <span id="candidateTotal">
+                    0 candidates
+                </span>
+
+            </div>
+
+
+            <div id="candidateList"></div>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+
+<script
+    src="{{ url_for('static', filename='script.js') }}">
+</script>
+
+</body>
+
+</html>
