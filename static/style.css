@@ -42,7 +42,7 @@ body {
             #6a00ff
         );
 
-    color: #ffffff; 
+    color: #FFD700; 
  
     min-height: 100vh; 
 }
@@ -84,7 +84,36 @@ body {
 
     font-weight: 800;
 
-    color: #4f46e5;
+    body {
+    font-family: "Inter", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 255, 255, 0.30),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 0, 255, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(120, 0, 255, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #5b00e8,
+            #9b00ff,
+            #6a00ff
+        );
+
+    color: #FFD700;
+
+    min-height: 100vh;
+}
 }
 
 
@@ -138,7 +167,36 @@ body {
 .header p {
     margin-top: 15px;
 
-    color: #747b89;
+    body {
+    font-family: "Inter", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 15% 15%,
+            rgba(255, 255, 255, 0.30),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 0, 255, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(120, 0, 255, 0.35),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #5b00e8,
+            #9b00ff,
+            #6a00ff
+        );
+
+    color: #FFD700;
+
+    min-height: 100vh;
+}
 
     font-size: 15px;
 
