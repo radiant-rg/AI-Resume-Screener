@@ -158,21 +158,14 @@ body {
    ========================================================= */
 
 .card {
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255, 255, 255, 0.97),
-            rgba(248, 245, 255, 0.96)
-        );
-
-    border: 1px solid rgba(255, 215, 0, 0.22);
-
+    background: #FFF4D6;
+    border: 1px solid rgba(255, 215, 0, 0.35);
     border-radius: 18px;
     padding: 30px;
     margin-bottom: 20px;
 
     box-shadow:
-        0 15px 45px rgba(0, 0, 0, 0.28);
+        0 12px 35px rgba(0, 0, 0, 0.25);
 
     transition:
         transform 0.3s ease,
