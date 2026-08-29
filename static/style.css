@@ -16,28 +16,36 @@ html {
     scroll-behavior: smooth;
 }
 
-
-body {
-    font-family: "Inter", sans-serif;
-
+body { 
+    font-family: "Inter", sans-serif; 
+ 
     background:
         radial-gradient(
-            circle at 10% 10%,
-            rgba(99, 102, 241, 0.08),
+            circle at 15% 15%,
+            rgba(255, 255, 255, 0.30),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 0, 255, 0.25),
             transparent 30%
         ),
         radial-gradient(
-            circle at 90% 20%,
-            rgba(124, 58, 237, 0.07),
-            transparent 30%
+            circle at 50% 90%,
+            rgba(120, 0, 255, 0.35),
+            transparent 35%
         ),
-        #f7f8fc;
+        linear-gradient(
+            135deg,
+            #5b00e8,
+            #9b00ff,
+            #6a00ff
+        );
 
-    color: #171923;
-
-    min-height: 100vh;
+    color: #ffffff; 
+ 
+    min-height: 100vh; 
 }
-
 
 /* =========================================================
    CONTAINER
