@@ -128,7 +128,7 @@ body {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: goldShine 4s linear infinite;
+    animation: goldShine 12s linear infinite;
 
     filter:
         drop-shadow(0 0 8px rgba(255, 215, 0, 0.45))
@@ -232,7 +232,7 @@ body {
     background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    animation: goldShine 4s linear infinite;
+    animation: goldShine 12s linear infinite;
 
     filter:
         drop-shadow(0 0 7px rgba(255, 215, 0, 0.35));
@@ -697,7 +697,7 @@ textarea:focus {
 
     margin-bottom: 25px;
 
-    animation: goldButtonShine 4s ease infinite;
+    animation: goldButtonShine 12s ease infinite;
 }
 
 @keyframes goldButtonShine {
@@ -740,7 +740,7 @@ textarea:focus {
 
     background-size: 300% 100%;
 
-    animation: rgbGlow 3s linear infinite;
+    animation: rgbGlow 10s linear infinite;
 
     filter:
         blur(4px);
@@ -871,7 +871,7 @@ textarea:focus {
 
     -webkit-text-fill-color: transparent;
 
-    animation: goldShine 4s linear infinite;
+    animation: goldShine 12s linear infinite;
 
     filter:
         drop-shadow(0 0 7px rgba(255, 215, 0, 0.35));
