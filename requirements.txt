@@ -1,7 +1,7 @@
 Flask
 flask-cors
-python-dotenv
 groq
 pydantic
 pypdf
+python-dotenv
 python-docx
