@@ -1,4 +1,4 @@
-# 🤖 AI Resume Screener
+# 🤖 AI Resume Parser
 
 An AI-powered resume screening and candidate ranking system that automatically analyzes a **job description** and multiple **candidate resumes**, extracts relevant information, evaluates candidate-job compatibility, and ranks candidates based on their overall match.
 
