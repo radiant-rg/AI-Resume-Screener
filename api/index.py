@@ -18,12 +18,17 @@ from docx import Document
 # 1. FLASK SETUP
 # ============================================================
 
+
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 app = Flask(
     __name__,
-    template_folder="../templates",
-    static_folder="../static"
+    template_folder=str(BASE_DIR / "templates"),
+    static_folder=str(BASE_DIR / "static")
 )
 
+CORS(app)
 # Allows frontend to communicate with Flask
 CORS(app)
 
@@ -42,7 +47,7 @@ if not my_api_key:
 
 client = Groq(api_key=my_api_key)
 
-model = "openai/gpt-oss-120b"
+model = "minimaxai/minimax-m2.7"
 
 
 # ============================================================
