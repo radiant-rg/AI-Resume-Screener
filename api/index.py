@@ -47,7 +47,7 @@ if not my_api_key:
 
 client = Groq(api_key=my_api_key)
 
-model = "minimaxai/minimax-m2.7"
+model = "openai/gpt-oss-120b"
 
 
 # ============================================================
